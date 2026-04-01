@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Analysis Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>📊 Data Analysis & Visualization Dashboard</h1>
+    <span>2,000 Records · SQL Aggregation · Business Insights</span>
+  </header>
+
+  <main>
+
+    <!-- KPI Row -->
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Revenue</div>
+        <div class="kpi-value" id="kpi-revenue">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Units Sold</div>
+        <div class="kpi-value" id="kpi-units">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total Profit</div>
+        <div class="kpi-value" id="kpi-profit">—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg Order Value</div>
+        <div class="kpi-value" id="kpi-avg">—</div>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="controls">
+      <label>Filter Trend by Category:</label>
+      <select id="cat-filter">
+        <option value="all">All Categories</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Books">Books</option>
+        <option value="Home &amp; Kitchen">Home &amp; Kitchen</option>
+        <option value="Sports">Sports</option>
+      </select>
+    </div>
+
+    <!-- Charts Grid -->
+    <div class="charts-grid">
+      <div class="chart-card wide">
+        <canvas id="chart-trend" width="750" height="260"></canvas>
+      </div>
+      <div class="chart-card">
+        <canvas id="chart-category" width="400" height="280"></canvas>
+      </div>
+      <div class="chart-card">
+        <canvas id="chart-city" width="400" height="280"></canvas>
+      </div>
+    </div>
+
+    <!-- Summary Table -->
+    <section class="table-section">
+      <h2>Revenue Breakdown by Category</h2>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Category</th><th>Revenue</th><th>Share</th></tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

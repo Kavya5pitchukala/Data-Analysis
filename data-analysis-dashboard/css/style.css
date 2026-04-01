@@ -1,0 +1,57 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: #0f0f1a; color: #e0e0e0; }
+
+header {
+  background: #1a1a2e; padding: 16px 30px;
+  border-bottom: 2px solid #3498db;
+  display: flex; justify-content: space-between; align-items: center;
+}
+header h1 { font-size: 1.3rem; color: #fff; }
+header span { font-size: 0.8rem; color: #888; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+.kpi-card {
+  background: #1a1a2e; border-radius: 10px; padding: 18px 20px;
+  border-top: 3px solid #3498db;
+}
+.kpi-label { font-size: 0.75rem; color: #888; text-transform: uppercase; margin-bottom: 8px; }
+.kpi-value { font-size: 1.7rem; font-weight: bold; color: #fff; }
+
+.controls {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 18px; font-size: 0.9rem; color: #aaa;
+}
+.controls select {
+  padding: 8px 14px; background: #1a1a2e; color: #fff;
+  border: 1px solid #333; border-radius: 6px; font-size: 0.9rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.chart-card {
+  background: #1a1a2e; border-radius: 10px; padding: 16px;
+  overflow: hidden;
+}
+.chart-card.wide { grid-column: 1 / -1; }
+canvas { width: 100% !important; height: auto !important; }
+
+.table-section {
+  background: #1a1a2e; border-radius: 10px; padding: 20px;
+}
+.table-section h2 { color: #fff; margin-bottom: 14px; font-size: 1rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th { padding: 10px 14px; text-align: left; color: #888; border-bottom: 1px solid #2a2a3e; }
+td { padding: 10px 14px; border-bottom: 1px solid #1e1e30; color: #ccc; }
+tr:hover td { background: rgba(255,255,255,0.03); }
+
+@media (max-width: 768px) {
+  .kpi-row { grid-template-columns: repeat(2,1fr); }
+  .charts-grid { grid-template-columns: 1fr; }
+  .chart-card.wide { grid-column: 1; }
+}
